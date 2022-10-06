@@ -1,4 +1,4 @@
-# /dev/input/event* Keyboard Decoder
+# Linux /dev/input/event* Keyboard Decoder
 ![](https://raw.githubusercontent.com/M0RC/event_logs_keyboard_decoder/main/demo.png)
 
 ## Description
