@@ -260,6 +260,17 @@ code_dict = {
     248: '[MICMUTE]'
 }
 
+def translate_key(translate, code):
+    """Translate a key from QWERTY US keyboard to specified keyboard"""
+
+    if code_dict[code] not in qwerty_us:
+        return code_dict[code]
+    else:
+        if code in range(0, 55) or code in range(56, 71) or code in range(84, 249): 
+            return code_dict[code].translate(translate)
+        else:
+            return code_dict[code]
+
 def check_args(parser, args):
     """Check if arguments from parser is valid"""
 
@@ -284,18 +295,6 @@ def get_args(parser):
     args = parser.parse_args()
 	
     return args
-
-def translate_key(translate, code):
-    """Translate a key from QWERTY US keyboard to specified keyboard"""
-
-    if code_dict[code] not in qwerty_us:
-        return code_dict[code]
-    else:
-        if code in range(0, 55) or code in range(56, 71) or code in range(84, 249): 
-            return code_dict[code].translate(translate)
-        else:
-            return code_dict[code]
-
 
 def main():
     parser = argparse.ArgumentParser()
